@@ -31,7 +31,7 @@ import { tabPaneProps } from './tab-pane'
 
 const COMPONENT_NAME = 'ElTabPane'
 defineOptions({
-  name: 'ElTabPane',
+  name: COMPONENT_NAME,
 })
 const props = defineProps(tabPaneProps)
 
