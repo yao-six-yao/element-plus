@@ -312,7 +312,7 @@ const TabNav = defineComponent({
         const btnClose = closable ? (
           <ElIcon
             class="is-icon-close"
-            onClick={(ev: Event) => emit('tab-remove', pane, ev)}
+            onClick={(ev: MouseEvent) => emit('tab-remove', pane, ev)}
           >
             <Close />
           </ElIcon>

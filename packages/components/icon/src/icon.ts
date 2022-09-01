@@ -12,7 +12,7 @@ export const iconProps = buildProps({
 } as const)
 
 export const iconEmits = {
-  click: (ev: Event) => ev instanceof Event,
+  click: (evt: MouseEvent) => evt instanceof MouseEvent,
 }
 
 export type IconProps = ExtractPropTypes<typeof iconProps>
