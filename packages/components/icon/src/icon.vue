@@ -1,5 +1,5 @@
 <template>
-  <i :class="ns.b()" :style="style" v-bind="$attrs">
+  <i :class="ns.b()" :style="style" v-bind="$attrs" @click="handleClick">
     <slot />
   </i>
 </template>
@@ -8,7 +8,7 @@
 import { computed } from 'vue'
 import { addUnit, isUndefined } from '@element-plus/utils'
 import { useNamespace } from '@element-plus/hooks'
-import { iconProps } from './icon'
+import { iconEmits, iconProps } from './icon'
 import type { CSSProperties } from 'vue'
 
 defineOptions({
@@ -16,6 +16,7 @@ defineOptions({
   inheritAttrs: false,
 })
 const props = defineProps(iconProps)
+const emit = defineEmits(iconEmits)
 const ns = useNamespace('icon')
 
 const style = computed<CSSProperties>(() => {
@@ -27,4 +28,8 @@ const style = computed<CSSProperties>(() => {
     '--color': color,
   }
 })
+
+const handleClick = (event: MouseEvent) => {
+  emit('click', event)
+}
 </script>

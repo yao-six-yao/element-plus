@@ -10,5 +10,11 @@ export const iconProps = buildProps({
     type: String,
   },
 } as const)
+
+export const iconEmits = {
+  click: (ev: Event) => ev instanceof Event,
+}
+
 export type IconProps = ExtractPropTypes<typeof iconProps>
+export type IconEmits = typeof iconEmits
 export type IconInstance = InstanceType<typeof Icon>
